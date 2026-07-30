@@ -149,11 +149,64 @@ a:hover {
 }
 
 .brand-mark {
+  display: inline-grid;
+  place-items: center;
   width: 2rem;
   height: 2rem;
   border-radius: 0.55rem;
   background: linear-gradient(145deg, var(--brand-light), var(--brand-dark));
   box-shadow: 0 10px 24px rgba(17, 17, 132, 0.28);
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15rem;
+  padding: 0.2rem;
+  border-radius: 999px;
+  background: rgba(17, 17, 132, 0.06);
+  border: 1px solid var(--border);
+}
+
+.lang-btn {
+  appearance: none;
+  border: 0;
+  margin: 0;
+  padding: 0.35rem 0.55rem;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-muted);
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.lang-btn:hover {
+  color: var(--brand);
+}
+
+.lang-btn.is-active {
+  background: var(--brand);
+  color: #fff;
+}
+
+.lang-switch-mobile {
+  margin-top: 0.35rem;
+  align-self: flex-start;
 }
 
 .nav {
@@ -733,6 +786,10 @@ a:hover {
 
 @media (max-width: 720px) {
   .nav {
+    display: none;
+  }
+
+  .header-actions .lang-switch:not(.lang-switch-mobile) {
     display: none;
   }
 

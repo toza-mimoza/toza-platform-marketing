@@ -71,4 +71,6 @@ sudo certbot --nginx -d console.toza-platform.com -d demo.toza-platform.com
 | Operator sign-in | `https://console.toza-platform.com` |
 | Contact | `support@toza-platform.com` |
 
-Positioning: **app-agnostic multi-tenant platform** with installable apps (featured: **APMS** ambulatory care). Update `index.html` / env when hostnames change.
+Positioning: **app-agnostic multi-tenant platform** with installable apps (featured: **APMS** ambulatory care).
+
+Locales: **EN / DE / SR (Latin)** — auto from `navigator.languages`, overridable via header switcher (stored in `localStorage`). Update `index.html` / env when hostnames change.

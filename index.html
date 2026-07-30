@@ -3,11 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Toza Platform — multi-tenant application platform. Isolated workspaces, installable apps including APMS for ambulatory care, and enterprise-grade security."
-    />
-    <title>Toza Platform</title>
+    <meta name="description" data-i18n="meta.description" content="" />
+    <title data-i18n="meta.title">Toza Platform</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,31 +14,51 @@
     />
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
 
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href="/">
-          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-mark" aria-hidden="true">T</span>
           <span class="brand-text">Toza Platform</span>
         </a>
-        <nav class="nav" aria-label="Primary">
-          <a href="#platform">Platform</a>
-          <a href="#apps">Apps</a>
-          <a href="#news">News</a>
-          <a href="#contact">Contact</a>
-          <a class="nav-cta" data-link="demo" href="https://demo.toza-platform.com">Try demo</a>
-        </nav>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav">
-          Menu
-        </button>
+        <div class="header-actions">
+          <nav class="nav" data-i18n-aria="a11y.nav" aria-label="Primary">
+            <a href="#platform" data-i18n="nav.platform">Platform</a>
+            <a href="#apps" data-i18n="nav.apps">Apps</a>
+            <a href="#news" data-i18n="nav.news">News</a>
+            <a href="#contact" data-i18n="nav.contact">Contact</a>
+            <a class="nav-cta" data-link="demo" href="https://demo.toza-platform.com" data-i18n="nav.demo">
+              Try demo
+            </a>
+          </nav>
+          <div class="lang-switch" role="group" data-i18n-aria="a11y.lang" aria-label="Language">
+            <button type="button" class="lang-btn" data-locale="en" aria-pressed="false">EN</button>
+            <button type="button" class="lang-btn" data-locale="de" aria-pressed="false">DE</button>
+            <button type="button" class="lang-btn" data-locale="sr" aria-pressed="false">SR</button>
+          </div>
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="mobile-nav"
+            data-i18n="nav.menu"
+          >
+            Menu
+          </button>
+        </div>
       </div>
-      <nav id="mobile-nav" class="mobile-nav" hidden aria-label="Mobile">
-        <a href="#platform">Platform</a>
-        <a href="#apps">Apps</a>
-        <a href="#news">News</a>
-        <a href="#contact">Contact</a>
-        <a data-link="demo" href="https://demo.toza-platform.com">Try demo</a>
+      <nav id="mobile-nav" class="mobile-nav" hidden data-i18n-aria="a11y.nav_mobile" aria-label="Mobile">
+        <a href="#platform" data-i18n="nav.platform">Platform</a>
+        <a href="#apps" data-i18n="nav.apps">Apps</a>
+        <a href="#news" data-i18n="nav.news">News</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+        <a data-link="demo" href="https://demo.toza-platform.com" data-i18n="nav.demo">Try demo</a>
+        <div class="lang-switch lang-switch-mobile" role="group" data-i18n-aria="a11y.lang" aria-label="Language">
+          <button type="button" class="lang-btn" data-locale="en" aria-pressed="false">EN</button>
+          <button type="button" class="lang-btn" data-locale="de" aria-pressed="false">DE</button>
+          <button type="button" class="lang-btn" data-locale="sr" aria-pressed="false">SR</button>
+        </div>
       </nav>
     </header>
 
@@ -50,21 +67,26 @@
         <div class="hero-glow" aria-hidden="true"></div>
         <div class="hero-grid-bg" aria-hidden="true"></div>
         <div class="container hero-inner">
-          <p class="brand-hero reveal">Toza Platform</p>
+          <p class="brand-hero reveal" data-i18n="hero.brand">Toza Platform</p>
           <h1 class="reveal reveal-delay-1">
-            Build on one runtime.
-            <em>Ship many apps.</em>
+            <span data-i18n="hero.title_1">Build on one runtime.</span>
+            <em data-i18n="hero.title_2">Ship many apps.</em>
           </h1>
-          <p class="lead reveal reveal-delay-2">
+          <p class="lead reveal reveal-delay-2" data-i18n="hero.lead">
             A multi-tenant application platform: isolated workspaces, shared
             security and licensing, and installable domain apps — starting with
             APMS for ambulatory care.
           </p>
           <div class="hero-actions reveal reveal-delay-3">
-            <a class="btn btn-primary" data-link="demo" href="https://demo.toza-platform.com">
+            <a
+              class="btn btn-primary"
+              data-link="demo"
+              href="https://demo.toza-platform.com"
+              data-i18n="hero.cta_demo"
+            >
               Explore live demo
             </a>
-            <a class="btn btn-ghost" href="#apps">Browse apps</a>
+            <a class="btn btn-ghost" href="#apps" data-i18n="hero.cta_apps">Browse apps</a>
           </div>
         </div>
       </section>
@@ -72,37 +94,37 @@
       <section id="platform" class="section platform">
         <div class="container">
           <div class="section-head reveal">
-            <h2>Platform capabilities</h2>
-            <p>
+            <h2 data-i18n="platform.title">Platform capabilities</h2>
+            <p data-i18n="platform.lead">
               Dynamic tables and forms, fine-grained security, communications,
               and an operator console — independent of which apps a tenant licenses.
             </p>
           </div>
           <div class="bento">
             <article class="bento-item bento-wide reveal">
-              <h3>True tenant isolation</h3>
-              <p>
+              <h3 data-i18n="platform.isolation.title">True tenant isolation</h3>
+              <p data-i18n="platform.isolation.body">
                 Each customer instance runs on its own database. Data never mixes
                 across organisations.
               </p>
             </article>
             <article class="bento-item reveal reveal-delay-1">
-              <h3>App marketplace</h3>
-              <p>
+              <h3 data-i18n="platform.marketplace.title">App marketplace</h3>
+              <p data-i18n="platform.marketplace.body">
                 License apps per instance. Install and unsubscribe without
                 rebuilding the stack.
               </p>
             </article>
             <article class="bento-item reveal reveal-delay-2">
-              <h3>Enterprise security</h3>
-              <p>
+              <h3 data-i18n="platform.security.title">Enterprise security</h3>
+              <p data-i18n="platform.security.body">
                 MFA, OAuth, ACL, audit trails, and session policies — once for
                 every app on the tenant.
               </p>
             </article>
             <article class="bento-item bento-wide reveal">
-              <h3>Operator console</h3>
-              <p>
+              <h3 data-i18n="platform.console.title">Operator console</h3>
+              <p data-i18n="platform.console.body">
                 Platform staff manage instances, licenses, and announcements from
                 a dedicated console — separate from customer workspaces.
               </p>
@@ -114,8 +136,8 @@
       <section id="apps" class="section apps">
         <div class="container">
           <div class="section-head reveal">
-            <h2>Apps on Toza</h2>
-            <p>
+            <h2 data-i18n="apps.title">Apps on Toza</h2>
+            <p data-i18n="apps.lead">
               Domain products ship as installable apps. The platform stays generic;
               each app brings its own data model, roles, workflows, and UI.
             </p>
@@ -123,46 +145,51 @@
 
           <article class="app-feature reveal">
             <div class="app-feature-copy">
-              <p class="app-eyebrow">Featured app</p>
-              <h3>APMS — Ambulatory care</h3>
-              <p>
+              <p class="app-eyebrow" data-i18n="apps.featured">Featured app</p>
+              <h3 data-i18n="apps.apms.title">APMS — Ambulatory care</h3>
+              <p data-i18n="apps.apms.body">
                 End-to-end operations for German ambulatory nursing services:
                 clients, service and medication plans, tour planning, duty roster,
                 billing (SGB XI / HKP), documents, and TI/KIM-ready electronic
                 submission when your gateway is connected.
               </p>
               <ul class="app-points">
-                <li>Care planning, proofs, and payroll-oriented workflows</li>
-                <li>Statutory billing packages and DTA / KIM paths</li>
-                <li>Role model for office, PDL, caregivers, and admins</li>
+                <li data-i18n="apps.apms.p1">Care planning, proofs, and payroll-oriented workflows</li>
+                <li data-i18n="apps.apms.p2">Statutory billing packages and DTA / KIM paths</li>
+                <li data-i18n="apps.apms.p3">Role model for office, PDL, caregivers, and admins</li>
               </ul>
-              <a class="btn btn-primary" data-link="demo" href="https://demo.toza-platform.com">
+              <a
+                class="btn btn-primary"
+                data-link="demo"
+                href="https://demo.toza-platform.com"
+                data-i18n="apps.apms.cta"
+              >
                 Open APMS demo
               </a>
             </div>
             <div class="app-feature-visual" aria-hidden="true">
               <div class="orbit">
-                <span class="orbit-chip" style="--i: 0">Clients</span>
-                <span class="orbit-chip" style="--i: 1">Tour plan</span>
-                <span class="orbit-chip" style="--i: 2">Service plans</span>
-                <span class="orbit-chip" style="--i: 3">Billing</span>
-                <span class="orbit-chip" style="--i: 4">Medications</span>
-                <span class="orbit-chip" style="--i: 5">KIM / TI</span>
+                <span class="orbit-chip" style="--i: 0" data-i18n="apps.chip.clients">Clients</span>
+                <span class="orbit-chip" style="--i: 1" data-i18n="apps.chip.tour">Tour plan</span>
+                <span class="orbit-chip" style="--i: 2" data-i18n="apps.chip.plans">Service plans</span>
+                <span class="orbit-chip" style="--i: 3" data-i18n="apps.chip.billing">Billing</span>
+                <span class="orbit-chip" style="--i: 4" data-i18n="apps.chip.meds">Medications</span>
+                <span class="orbit-chip" style="--i: 5" data-i18n="apps.chip.kim">KIM / TI</span>
               </div>
             </div>
           </article>
 
           <div class="app-rail">
             <article class="rail-item reveal">
-              <h3>Insight</h3>
-              <p>
+              <h3 data-i18n="apps.insight.title">Insight</h3>
+              <p data-i18n="apps.insight.body">
                 Operational KPIs and dashboards on tenant data — analytics without
                 leaving the workspace.
               </p>
             </article>
             <article class="rail-item reveal reveal-delay-1">
-              <h3>Your next app</h3>
-              <p>
+              <h3 data-i18n="apps.next.title">Your next app</h3>
+              <p data-i18n="apps.next.body">
                 The same metadata engine, ACL, and marketplace can host additional
                 verticals. Talk to us about packaging your domain on Toza.
               </p>
@@ -174,11 +201,11 @@
       <section id="news" class="section news">
         <div class="container">
           <div class="section-head reveal">
-            <h2>Platform news</h2>
-            <p>Updates from the Toza team — also shown on workspace login screens.</p>
+            <h2 data-i18n="news.title">Platform news</h2>
+            <p data-i18n="news.lead">Updates from the Toza team — also shown on workspace login screens.</p>
           </div>
           <div id="announcements" class="announcements reveal">
-            <p class="announcements-loading">Loading announcements…</p>
+            <p class="announcements-loading" data-i18n="news.loading">Loading announcements…</p>
           </div>
         </div>
       </section>
@@ -186,17 +213,27 @@
       <section class="section cta-band reveal">
         <div class="container cta-inner">
           <div>
-            <h2>See the platform and APMS live</h2>
-            <p>
+            <h2 data-i18n="cta.title">See the platform and APMS live</h2>
+            <p data-i18n="cta.body">
               Walk through the public demo or contact us about a dedicated
               workspace for your organisation.
             </p>
           </div>
           <div class="cta-actions">
-            <a class="btn btn-on-dark" data-link="demo" href="https://demo.toza-platform.com">
+            <a
+              class="btn btn-on-dark"
+              data-link="demo"
+              href="https://demo.toza-platform.com"
+              data-i18n="cta.demo"
+            >
               Open demo
             </a>
-            <a class="btn btn-ghost-light" data-link="console" href="https://console.toza-platform.com">
+            <a
+              class="btn btn-ghost-light"
+              data-link="console"
+              href="https://console.toza-platform.com"
+              data-i18n="cta.console"
+            >
               Operator sign-in
             </a>
           </div>
@@ -206,20 +243,22 @@
       <section id="contact" class="section contact">
         <div class="container contact-grid">
           <div class="reveal">
-            <h2>Contact</h2>
-            <p>
+            <h2 data-i18n="contact.title">Contact</h2>
+            <p data-i18n="contact.lead">
               Questions about the platform, APMS onboarding, pricing, or a pilot?
               We&apos;d love to hear from you.
             </p>
           </div>
           <div class="contact-panel reveal reveal-delay-1">
-            <p class="contact-label">Email</p>
+            <p class="contact-label" data-i18n="contact.email_label">Email</p>
             <a class="contact-link" href="mailto:support@toza-platform.com">
               support@toza-platform.com
             </a>
             <p class="contact-note">
-              Existing workspace users sign in at their organisation subdomain —
-              for example
+              <span data-i18n="contact.note">
+                Existing workspace users sign in at their organisation subdomain —
+                for example
+              </span>
               <code>your-org.toza-platform.com</code>.
             </p>
           </div>
@@ -229,8 +268,10 @@
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <p>© <span id="year"></span> Toza Platform. All rights reserved.</p>
-        <p class="footer-meta">Multi-tenant application platform · Apps including APMS</p>
+        <p>© <span id="year"></span> <span data-i18n="footer.rights">Toza Platform. All rights reserved.</span></p>
+        <p class="footer-meta" data-i18n="footer.meta">
+          Multi-tenant application platform · Apps including APMS
+        </p>
       </div>
     </footer>
 

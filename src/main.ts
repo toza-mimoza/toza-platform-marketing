@@ -1,4 +1,11 @@
 import "./styles.css";
+import {
+  detectLocale,
+  rememberLocale,
+  t,
+  type Locale,
+  isLocale,
+} from "./i18n";
 
 /** Public platform API — login announcements (no auth). */
 const API_BASE = import.meta.env.VITE_API_BASE_URL ?? "https://api.toza-platform.com";
@@ -13,10 +20,13 @@ type Announcement = {
   mira_created?: string | null;
 };
 
+let currentLocale: Locale = "en";
+
 function formatDate(iso: string | null | undefined): string {
   if (!iso) return "";
   try {
-    return new Intl.DateTimeFormat(undefined, {
+    const tag = currentLocale === "sr" ? "sr-Latn" : currentLocale;
+    return new Intl.DateTimeFormat(tag, {
       year: "numeric",
       month: "short",
       day: "numeric",
@@ -34,6 +44,53 @@ function escapeHtml(text: string): string {
     .replaceAll('"', "&quot;");
 }
 
+function applyLocale(locale: Locale): void {
+  currentLocale = locale;
+  document.documentElement.lang = locale === "sr" ? "sr-Latn" : locale;
+
+  for (const el of document.querySelectorAll<HTMLElement>("[data-i18n]")) {
+    const key = el.dataset.i18n;
+    if (!key) continue;
+    const value = t(locale, key);
+    if (el.tagName === "META" && el.getAttribute("name") === "description") {
+      el.setAttribute("content", value);
+    } else if (el.tagName === "TITLE") {
+      document.title = value;
+    } else {
+      el.textContent = value;
+    }
+  }
+
+  for (const el of document.querySelectorAll<HTMLElement>("[data-i18n-aria]")) {
+    const key = el.dataset.i18nAria;
+    if (!key) continue;
+    el.setAttribute("aria-label", t(locale, key));
+  }
+
+  for (const btn of document.querySelectorAll<HTMLButtonElement>(".lang-btn")) {
+    const code = btn.dataset.locale;
+    const active = code === locale;
+    btn.setAttribute("aria-pressed", String(active));
+    btn.classList.toggle("is-active", active);
+  }
+}
+
+function setupLocale(): void {
+  applyLocale(detectLocale());
+
+  document.addEventListener("click", (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLElement)) return;
+    const btn = target.closest<HTMLButtonElement>(".lang-btn");
+    if (!btn) return;
+    const code = btn.dataset.locale;
+    if (!isLocale(code)) return;
+    rememberLocale(code);
+    applyLocale(code);
+    void loadAnnouncements();
+  });
+}
+
 async function loadAnnouncements(): Promise<void> {
   const root = document.getElementById("announcements");
   if (!root) return;
@@ -45,7 +102,7 @@ async function loadAnnouncements(): Promise<void> {
     const items = data.announcements ?? [];
 
     if (items.length === 0) {
-      root.innerHTML = '<p class="announcements-empty">No announcements at the moment.</p>';
+      root.innerHTML = `<p class="announcements-empty">${escapeHtml(t(currentLocale, "news.empty"))}</p>`;
       return;
     }
 
@@ -70,8 +127,7 @@ async function loadAnnouncements(): Promise<void> {
       })
       .join("");
   } catch {
-    root.innerHTML =
-      '<p class="announcements-error">Announcements are temporarily unavailable.</p>';
+    root.innerHTML = `<p class="announcements-error">${escapeHtml(t(currentLocale, "news.error"))}</p>`;
   }
 }
 
@@ -128,6 +184,7 @@ function setupReveal(): void {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  setupLocale();
   setupYear();
   setupMobileNav();
   setupHeaderScroll();
