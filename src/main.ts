@@ -6,6 +6,7 @@ import {
   type Locale,
   isLocale,
 } from "./i18n";
+import { setupContactForm } from "./contact";
 
 /** Public platform API — login announcements (no auth). */
 const API_BASE = import.meta.env.VITE_API_BASE_URL ?? "https://api.toza-platform.com";
@@ -21,6 +22,10 @@ type Announcement = {
 };
 
 let currentLocale: Locale = "en";
+
+export function getCurrentLocale(): Locale {
+  return currentLocale;
+}
 
 function formatDate(iso: string | null | undefined): string {
   if (!iso) return "";
@@ -189,5 +194,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setupMobileNav();
   setupHeaderScroll();
   setupReveal();
+  setupContactForm(getCurrentLocale);
   void loadAnnouncements();
 });

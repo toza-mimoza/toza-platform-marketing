@@ -83,10 +83,20 @@ const en: Messages = {
   "cta.console": "Operator sign-in",
   "contact.title": "Contact",
   "contact.lead":
-    "Questions about the platform, APMS onboarding, pricing, or a pilot? We'd love to hear from you.",
-  "contact.email_label": "Email",
+    "Questions about the platform, APMS onboarding, pricing, or a pilot? Send a message — we respond by email.",
+  "contact.email_label": "Or email us directly",
   "contact.note":
     "Existing workspace users sign in at their organisation subdomain — for example",
+  "contact.form.name": "Name",
+  "contact.form.email": "Work email",
+  "contact.form.company": "Organisation (optional)",
+  "contact.form.message": "Message",
+  "contact.form.submit": "Send message",
+  "contact.form.sending": "Sending…",
+  "contact.form.success": "Thanks — we received your message and will get back to you soon.",
+  "contact.form.error": "Could not send your message. Please try again or email support@toza-platform.com.",
+  "contact.form.captcha": "Please complete the captcha check.",
+  "contact.form.rate": "Too many messages from this network. Please try again later.",
   "footer.rights": "Toza Platform. All rights reserved.",
   "footer.meta": "Multi-tenant application platform · Apps including APMS",
 };
@@ -162,10 +172,21 @@ const de: Messages = {
   "cta.console": "Operator-Anmeldung",
   "contact.title": "Kontakt",
   "contact.lead":
-    "Fragen zur Plattform, APMS-Onboarding, Preisen oder einem Pilot? Wir freuen uns auf Ihre Nachricht.",
-  "contact.email_label": "E-Mail",
+    "Fragen zur Plattform, APMS-Onboarding, Preisen oder einem Pilot? Schreiben Sie uns — wir antworten per E-Mail.",
+  "contact.email_label": "Oder schreiben Sie uns direkt",
   "contact.note":
     "Bestehende Workspace-Nutzer melden sich über die Subdomain ihrer Organisation an — zum Beispiel",
+  "contact.form.name": "Name",
+  "contact.form.email": "Geschäftliche E-Mail",
+  "contact.form.company": "Organisation (optional)",
+  "contact.form.message": "Nachricht",
+  "contact.form.submit": "Nachricht senden",
+  "contact.form.sending": "Wird gesendet…",
+  "contact.form.success": "Danke — wir haben Ihre Nachricht erhalten und melden uns bald.",
+  "contact.form.error":
+    "Nachricht konnte nicht gesendet werden. Bitte erneut versuchen oder support@toza-platform.com schreiben.",
+  "contact.form.captcha": "Bitte die Captcha-Prüfung abschließen.",
+  "contact.form.rate": "Zu viele Nachrichten aus diesem Netzwerk. Bitte später erneut versuchen.",
   "footer.rights": "Toza Platform. Alle Rechte vorbehalten.",
   "footer.meta": "Multi-Tenant-Anwendungsplattform · Apps einschließlich APMS",
 };
@@ -241,10 +262,21 @@ const sr: Messages = {
   "cta.console": "Prijava operatora",
   "contact.title": "Kontakt",
   "contact.lead":
-    "Pitanja o platformi, uvođenju APMS-a, cenama ili pilotu? Rado ćemo čuti od vas.",
-  "contact.email_label": "Email",
+    "Pitanja o platformi, uvođenju APMS-a, cenama ili pilotu? Pošaljite poruku — odgovaramo emailom.",
+  "contact.email_label": "Ili nam pišite direktno",
   "contact.note":
     "Postojeći korisnici radnih prostora prijavljuju se na subdomenu svoje organizacije — na primer",
+  "contact.form.name": "Ime",
+  "contact.form.email": "Poslovni email",
+  "contact.form.company": "Organizacija (opciono)",
+  "contact.form.message": "Poruka",
+  "contact.form.submit": "Pošalji poruku",
+  "contact.form.sending": "Slanje…",
+  "contact.form.success": "Hvala — primili smo vašu poruku i javićemo se uskoro.",
+  "contact.form.error":
+    "Poruka nije poslata. Pokušajte ponovo ili pišite na support@toza-platform.com.",
+  "contact.form.captcha": "Molimo završite captcha proveru.",
+  "contact.form.rate": "Previše poruka sa ove mreže. Pokušajte kasnije.",
   "footer.rights": "Toza Platform. Sva prava zadržana.",
   "footer.meta": "Multi-tenant aplikativna platforma · Aplikacije uključujući APMS",
 };
