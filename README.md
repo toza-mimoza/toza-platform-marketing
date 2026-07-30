@@ -35,7 +35,7 @@ Output: `dist/` → deploy to `/var/www/toza/marketing/` on the VPS.
 
 ## Deploy on Hostinger VPS
 
-As user **`toza`**:
+As user **`toza`** (after root created `/opt/toza-platform-marketing` — see Phase 0 runbook):
 
 ```bash
 cd /opt/toza-platform-marketing   # clone this repo once
@@ -46,7 +46,7 @@ rsync -a --delete dist/ /var/www/toza/marketing/
 
 As **root**, nginx serves apex only from marketing (see `nginx/toza-marketing.conf`).
 
-Tenant app SPA stays on **`*.toza-platform.com`** → `/var/www/toza/frontend/`.
+Tenant Toza Platform SPA stays on **`*.toza-platform.com`** → `/var/www/toza/frontend/` (nginx site **`toza-platform`**).
 
 ## TLS (Certbot)
 
@@ -67,8 +67,8 @@ sudo certbot --nginx -d console.toza-platform.com -d demo.toza-platform.com
 
 | Link | URL |
 |------|-----|
-| Demo | `https://demo.toza-platform.com` |
+| Demo (platform + APMS) | `https://demo.toza-platform.com` |
 | Operator sign-in | `https://console.toza-platform.com` |
 | Contact | `support@toza-platform.com` |
 
-Update `index.html` / env when hostnames change.
+Positioning: **app-agnostic multi-tenant platform** with installable apps (featured: **APMS** ambulatory care). Update `index.html` / env when hostnames change.

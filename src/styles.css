@@ -363,6 +363,82 @@ img {
   font-size: 0.95rem;
 }
 
+/* Apps */
+.apps {
+  background: var(--surface);
+}
+
+.app-spotlight {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 1.5rem;
+  align-items: stretch;
+  padding: 1.75rem;
+  border-radius: calc(var(--radius) + 4px);
+  background: linear-gradient(160deg, #fff 0%, var(--surface-soft) 100%);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  margin-bottom: 1rem;
+}
+
+.app-eyebrow {
+  margin: 0 0 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand);
+}
+
+.app-spotlight-copy h3 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  letter-spacing: -0.02em;
+}
+
+.app-spotlight-copy > p {
+  margin: 0 0 1rem;
+  color: var(--ink-muted);
+  max-width: 36rem;
+}
+
+.app-points {
+  margin: 0 0 1.35rem;
+  padding-left: 1.15rem;
+  color: var(--ink-muted);
+}
+
+.app-points li {
+  margin-bottom: 0.35rem;
+}
+
+.app-spotlight-panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  gap: 0.65rem;
+  padding: 1rem;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px dashed var(--border);
+}
+
+.app-chip {
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--brand-dark);
+  background: var(--surface-muted);
+  border: 1px solid var(--border);
+}
+
+.app-more {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
 .announcements {
   display: grid;
   gap: 1rem;
@@ -510,7 +586,9 @@ img {
 @media (max-width: 960px) {
   .hero-grid,
   .feature-grid,
-  .contact-grid {
+  .contact-grid,
+  .app-spotlight,
+  .app-more {
     grid-template-columns: 1fr;
   }
 
