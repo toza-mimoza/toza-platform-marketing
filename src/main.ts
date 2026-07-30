@@ -55,10 +55,9 @@ async function loadAnnouncements(): Promise<void> {
         const summary = item.summary?.trim()
           ? `<p class="announcement-summary">${escapeHtml(item.summary)}</p>`
           : "";
-        const link =
-          item.link_url?.trim()
-            ? `<p><a href="${escapeHtml(item.link_url)}" rel="noopener noreferrer">${escapeHtml(item.link_label?.trim() || item.link_url)}</a></p>`
-            : "";
+        const link = item.link_url?.trim()
+          ? `<p><a href="${escapeHtml(item.link_url)}" rel="noopener noreferrer">${escapeHtml(item.link_label?.trim() || item.link_url)}</a></p>`
+          : "";
         return `
           <article class="announcement-card">
             <h3>${escapeHtml(item.title)}</h3>
@@ -93,8 +92,45 @@ function setupYear(): void {
   if (el) el.textContent = String(new Date().getFullYear());
 }
 
+function setupHeaderScroll(): void {
+  const header = document.querySelector<HTMLElement>(".site-header");
+  if (!header) return;
+
+  const sync = () => {
+    header.classList.toggle("is-scrolled", window.scrollY > 8);
+  };
+  sync();
+  window.addEventListener("scroll", sync, { passive: true });
+}
+
+function setupReveal(): void {
+  const nodes = Array.from(document.querySelectorAll<HTMLElement>(".reveal"));
+  if (nodes.length === 0) return;
+
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduced || !("IntersectionObserver" in window)) {
+    for (const node of nodes) node.classList.add("is-visible");
+    return;
+  }
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        entry.target.classList.add("is-visible");
+        io.unobserve(entry.target);
+      }
+    },
+    { rootMargin: "0px 0px -8% 0px", threshold: 0.12 },
+  );
+
+  for (const node of nodes) io.observe(node);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   setupYear();
   setupMobileNav();
+  setupHeaderScroll();
+  setupReveal();
   void loadAnnouncements();
 });

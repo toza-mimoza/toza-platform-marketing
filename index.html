@@ -47,86 +47,60 @@
 
     <main id="main">
       <section class="hero">
-        <div class="container hero-grid">
-          <div class="hero-copy">
-            <p class="eyebrow">Application platform for regulated organisations</p>
-            <h1>
-              One engine.
-              <em>Many</em>
-              apps. Isolated workspaces.
-            </h1>
-            <p class="lead">
-              Toza Platform is a multi-tenant runtime for installable business apps —
-              not a single vertical product. Each organisation gets its own isolated
-              environment, with shared security, metadata, and licensing underneath.
-            </p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" data-link="demo" href="https://demo.toza-platform.com">
-                Explore live demo
-              </a>
-              <a class="btn btn-secondary" href="#apps">See apps</a>
-            </div>
-          </div>
-          <div class="hero-panel" aria-hidden="true">
-            <div class="panel-card">
-              <div class="panel-row">
-                <span class="dot dot-green"></span>
-                <span>Isolated tenant databases</span>
-              </div>
-              <div class="panel-row">
-                <span class="dot dot-blue"></span>
-                <span>Role-based access &amp; ACL</span>
-              </div>
-              <div class="panel-row">
-                <span class="dot dot-violet"></span>
-                <span>Marketplace-licensed apps</span>
-              </div>
-              <div class="panel-stat">
-                <span class="stat-value">1</span>
-                <span class="stat-label">platform engine</span>
-              </div>
-              <div class="panel-stat">
-                <span class="stat-value">∞</span>
-                <span class="stat-label">customer instances</span>
-              </div>
-            </div>
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="hero-grid-bg" aria-hidden="true"></div>
+        <div class="container hero-inner">
+          <p class="brand-hero reveal">Toza Platform</p>
+          <h1 class="reveal reveal-delay-1">
+            Build on one runtime.
+            <em>Ship many apps.</em>
+          </h1>
+          <p class="lead reveal reveal-delay-2">
+            A multi-tenant application platform: isolated workspaces, shared
+            security and licensing, and installable domain apps — starting with
+            APMS for ambulatory care.
+          </p>
+          <div class="hero-actions reveal reveal-delay-3">
+            <a class="btn btn-primary" data-link="demo" href="https://demo.toza-platform.com">
+              Explore live demo
+            </a>
+            <a class="btn btn-ghost" href="#apps">Browse apps</a>
           </div>
         </div>
       </section>
 
-      <section id="platform" class="section features">
+      <section id="platform" class="section platform">
         <div class="container">
-          <div class="section-head">
+          <div class="section-head reveal">
             <h2>Platform capabilities</h2>
             <p>
-              A ServiceNow-inspired core: dynamic tables and forms, fine-grained
-              security, communications, and an operator console — independent of
-              which apps a tenant licenses.
+              Dynamic tables and forms, fine-grained security, communications,
+              and an operator console — independent of which apps a tenant licenses.
             </p>
           </div>
-          <div class="feature-grid">
-            <article class="feature-card">
+          <div class="bento">
+            <article class="bento-item bento-wide reveal">
               <h3>True tenant isolation</h3>
               <p>
                 Each customer instance runs on its own database. Data never mixes
                 across organisations.
               </p>
             </article>
-            <article class="feature-card">
+            <article class="bento-item reveal reveal-delay-1">
               <h3>App marketplace</h3>
               <p>
-                Start with the platform shell, then license apps per instance.
-                Install and unsubscribe without rebuilding the stack.
+                License apps per instance. Install and unsubscribe without
+                rebuilding the stack.
               </p>
             </article>
-            <article class="feature-card">
+            <article class="bento-item reveal reveal-delay-2">
               <h3>Enterprise security</h3>
               <p>
-                MFA, OAuth, ACL rules, audit trails, and session policies —
-                enforced once for every app on the tenant.
+                MFA, OAuth, ACL, audit trails, and session policies — once for
+                every app on the tenant.
               </p>
             </article>
-            <article class="feature-card">
+            <article class="bento-item bento-wide reveal">
               <h3>Operator console</h3>
               <p>
                 Platform staff manage instances, licenses, and announcements from
@@ -139,16 +113,16 @@
 
       <section id="apps" class="section apps">
         <div class="container">
-          <div class="section-head">
+          <div class="section-head reveal">
             <h2>Apps on Toza</h2>
             <p>
               Domain products ship as installable apps. The platform stays generic;
-              each app brings its own tables, roles, workflows, and UI.
+              each app brings its own data model, roles, workflows, and UI.
             </p>
           </div>
 
-          <article class="app-spotlight">
-            <div class="app-spotlight-copy">
+          <article class="app-feature reveal">
+            <div class="app-feature-copy">
               <p class="app-eyebrow">Featured app</p>
               <h3>APMS — Ambulatory care</h3>
               <p>
@@ -166,25 +140,27 @@
                 Open APMS demo
               </a>
             </div>
-            <div class="app-spotlight-panel" aria-hidden="true">
-              <div class="app-chip">Clients</div>
-              <div class="app-chip">Tour plan</div>
-              <div class="app-chip">Service plans</div>
-              <div class="app-chip">Billing</div>
-              <div class="app-chip">Medications</div>
-              <div class="app-chip">KIM / TI</div>
+            <div class="app-feature-visual" aria-hidden="true">
+              <div class="orbit">
+                <span class="orbit-chip" style="--i: 0">Clients</span>
+                <span class="orbit-chip" style="--i: 1">Tour plan</span>
+                <span class="orbit-chip" style="--i: 2">Service plans</span>
+                <span class="orbit-chip" style="--i: 3">Billing</span>
+                <span class="orbit-chip" style="--i: 4">Medications</span>
+                <span class="orbit-chip" style="--i: 5">KIM / TI</span>
+              </div>
             </div>
           </article>
 
-          <div class="app-more">
-            <article class="feature-card">
+          <div class="app-rail">
+            <article class="rail-item reveal">
               <h3>Insight</h3>
               <p>
-                Operational KPIs and dashboards on top of tenant data — license
-                when you need analytics without leaving the workspace.
+                Operational KPIs and dashboards on tenant data — analytics without
+                leaving the workspace.
               </p>
             </article>
-            <article class="feature-card">
+            <article class="rail-item reveal reveal-delay-1">
               <h3>Your next app</h3>
               <p>
                 The same metadata engine, ACL, and marketplace can host additional
@@ -197,30 +173,30 @@
 
       <section id="news" class="section news">
         <div class="container">
-          <div class="section-head">
+          <div class="section-head reveal">
             <h2>Platform news</h2>
             <p>Updates from the Toza team — also shown on workspace login screens.</p>
           </div>
-          <div id="announcements" class="announcements">
+          <div id="announcements" class="announcements reveal">
             <p class="announcements-loading">Loading announcements…</p>
           </div>
         </div>
       </section>
 
-      <section class="section cta-band">
+      <section class="section cta-band reveal">
         <div class="container cta-inner">
           <div>
             <h2>See the platform and APMS live</h2>
             <p>
-              Walk through the public demo (platform + APMS) or contact us about a
-              dedicated workspace for your organisation.
+              Walk through the public demo or contact us about a dedicated
+              workspace for your organisation.
             </p>
           </div>
           <div class="cta-actions">
-            <a class="btn btn-primary" data-link="demo" href="https://demo.toza-platform.com">
+            <a class="btn btn-on-dark" data-link="demo" href="https://demo.toza-platform.com">
               Open demo
             </a>
-            <a class="btn btn-secondary" data-link="console" href="https://console.toza-platform.com">
+            <a class="btn btn-ghost-light" data-link="console" href="https://console.toza-platform.com">
               Operator sign-in
             </a>
           </div>
@@ -229,14 +205,14 @@
 
       <section id="contact" class="section contact">
         <div class="container contact-grid">
-          <div>
+          <div class="reveal">
             <h2>Contact</h2>
             <p>
               Questions about the platform, APMS onboarding, pricing, or a pilot?
               We&apos;d love to hear from you.
             </p>
           </div>
-          <div class="contact-card">
+          <div class="contact-panel reveal reveal-delay-1">
             <p class="contact-label">Email</p>
             <a class="contact-link" href="mailto:support@toza-platform.com">
               support@toza-platform.com
